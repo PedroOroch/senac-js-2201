@@ -5,6 +5,7 @@ const p = document.getElementById('paragrafo');
 
 if (confirm('Quer entrar com um valor?')) {
 
+
     let valor = prompt('Entre com um número de 0 a 10');
 
     if (valor >= 0 && valor <= 10) {
@@ -16,6 +17,7 @@ if (confirm('Quer entrar com um valor?')) {
 
         }
 
+        document.body.style.backgroundColor = '#8ef';
 
     } else {
 
@@ -23,6 +25,7 @@ if (confirm('Quer entrar com um valor?')) {
     }
 
 } else {
+    document.body.style.backgroundColor = '#80f';
     p.innerText = 'que pena que você não entrou com um valor :(';
 }
 
