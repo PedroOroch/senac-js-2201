@@ -27,7 +27,7 @@ itens[3].style.color = 'red';
 itens[0].style.color = itens[2].style.color = 'yellow';
 */
 
-const itens = document.getElementsByTagName('li');
+//const itens = document.getElementsByTagName('li');
 
 
 /*
@@ -37,6 +37,7 @@ itensArray.forEach(function(li, indice) {
 
 */
 
+/*
 let itensImpares = document.querySelector('li:nth-child(odd)');
 
 
@@ -46,8 +47,38 @@ itensArray.forEach(function(item) {
     item.style.background = '#dedede';
 });
 
-
+*/
 
 //ou even para itens Pares
 
 //itens[0].style.background = itens[2].style.background = 'gray'
+
+//const ITENS = document.querySelector('ul.collection');
+
+//let valor = ITENS.childElementCount;
+
+//console.log(valor);
+
+//console.log(ITENS.children[2].firstChild);
+
+//ITENS.children[2].firstChild.textContent = 'Estudar ainda mais';
+
+//ITENS.children[2].firstChild.data = 'Vamos ver agora';
+
+/*
+const LABEL = document.querySelector('div.input-field');
+
+console.log(LABEL.children[1].textContent);
+*/
+
+const LABEL = document.querySelector('form div label');
+
+console.log(LABEL.textContent);
+
+LABEL.textContent = 'Escreva aqui sua tarefa';
+
+const CLEAR = document.querySelector('a.clear-tasks');
+
+console.log(CLEAR.textContent);
+
+CLEAR.textContent = 'EXPLODA TUDO!';
