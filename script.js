@@ -1,5 +1,10 @@
 //Ola Boninho :D
 
+//const variável imutável, não pode ser alterada ou redeclarada
+//console.log = exibe uma mensagem no console do navegador
+//let = variável mutável
+//function = pedaço de código que faz algo e que depois é solicitado para evitar redundância
+
 /* 
     Ola Boninho :D
     Ola Boninho :D
