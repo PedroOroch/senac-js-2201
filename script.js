@@ -1,43 +1,74 @@
-//Ola Boninho :D
+//function nomeDaFunção(){}
 
-//const variável imutável, não pode ser alterada ou redeclarada
-//console.log = exibe uma mensagem no console do navegador
-//let = variável mutável
-//function = pedaço de código que faz algo e que depois é solicitado para evitar redundância
-
-/* 
-    Ola Boninho :D
-    Ola Boninho :D
-    Ola Boninho :D
-*/
-
-function diretoNoElemento() {
-    console.log('Olá mundo!');
+function olaMundoNoLog(nome) {
+    console.log(`Olá ${nome}!`);
 }
 
-let x = 20;
-const XPTO = 20;
+olaMundoNoLog("Camila");
 
-function profBoninho() {
 
-    if (x == 20)
-        console.log("bbb");
-    else
-        console.log("aaa");
+//Function Expressions - colocar uma função em um objeto
 
-    for (i = 0; i < 10; i++) {
-        console.log('Boninho');
+const SOMA = function(a, b) {
+    return a + b;
+}
+
+let resultado = SOMA(2, 2);
+
+console.log(resultado);
+
+//Immediately Invoked Function Expression (IIFE) - Você declara e já chama ao mesmo tempo
+
+(function(a, b) {
+    console.log(a + b);
+})(3, 3);
+
+
+function retornaUltimo(vetor) {
+    return vetor[vetor.length - 1];
+}
+
+console.log(retornaUltimo([1, 2, 3, 4, 5]));
+
+//em um Objeto(método)
+
+let aluno = {
+    nome: "Amanda",
+    matricula: 8916213,
+    setNome: function(n) {
+        console.log("Muda Nome");
     }
 }
 
-profBoninho();
+aluno.setNome("BlaBLa");
+
+//Exercício datas
+
+let hoje = new Date();
+
+console.log(hoje.getSeconds());
 
 
 
-x = x + ' Programar!';
+function nomeDoMes() {
 
+    const MES = ['Janeiro',
+        'Fevereiro',
+        'Março',
+        'Abril',
+        'Maio',
+        'Junho',
+        'Julho',
+        'Agosto',
+        'Setembro',
+        'Outubro',
+        'Novembro',
+        'Dezembro'
+    ]; // uma função com uma matriz compondo o nome dos meses
 
+    let atual = new Date; //Objeto com informações dia mes anos
 
+    return MES[atual.getMonth()];
+}
 
-console.log(XPTO);
-console.log(x);
+console.log(nomeDoMes());
