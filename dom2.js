@@ -3,7 +3,7 @@ const p = document.getElementById('paragrafo');
 //p.innerText = 'Meu Texto!';
 
 
-if (confirm('Quer entrar com um valor?')) {
+if (confirm('Quer entrar com um valor?')) { //pop up para o usuário confirmar ou negar uma ação/pergunta
 
     let valor = prompt('Entre com um número de 0 a 10');
 
