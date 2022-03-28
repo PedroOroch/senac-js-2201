@@ -1,17 +1,17 @@
 //Criando o elemento li
 const LI = document.createElement('li');
 
-LI.className = ('collection-item');
+LI.className = ('collection-item'); //atribuição de classe para um elemento
 
-LI.id = 'nova-tarefa-qualquer';
+LI.id = 'nova-tarefa-qualquer'; //atriubuição de id para um elemento
 
-LI.setAttribute('title', 'Pare o mouse para ver');
+LI.setAttribute('title', 'Pare o mouse para ver'); //adicionando um atributo para um elemento
 //FIM colocando o elemento li
 
 //Criamos um texto para colocar em li
 const TXT = document.createTextNode('Tarefa inserida dinamicamente');
 
-LI.appendChild(TXT);
+LI.appendChild(TXT); //Coloca um elemento dentro do outro
 
 console.log(LI);
 
@@ -45,10 +45,10 @@ const NEWTITLE = document.createElement('h2'); //Criando elemento h2
 
 NEWTITLE.id = 'task-title'; //define o id
 
-NEWTITLE.append(document.createTextNode('Listinha'));
+NEWTITLE.append(document.createTextNode('Listinha')); //cria um novo texto pra constante atributo
 
 const OLDTITLE = document.getElementById('task-title');
 
 const ACTIONC = document.querySelector('.card-action');
 
-ACTIONC.replaceChild(NEWTITLE, OLDTITLE);
+ACTIONC.replaceChild(NEWTITLE, OLDTITLE); //substitui um elemento e suas informacoes
