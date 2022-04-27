@@ -83,6 +83,30 @@ function apagaTarefa(evento) {
         evento.target.parentElement.parentElement.remove();
     }
 
+    apagaDoLocalStorage(evento.target.parentElement.parentElement);
+
+}
+
+function apagaDoLocalStorage(tarefaParaApagar) {
+
+
+    let tarefas;
+
+    if (localStorage.getItem('tarefas') === null)
+        tarefas = [];
+    else
+        tarefas = JSON.parse(localStorage.getItem('tarefas'));
+
+    console.log(tarefas);
+
+    tarefas.forEach(function(tarefa, indice) {
+        if (tarefaParaApagar.textContent === tarefa)
+            tarefas.splice(indice, 1);
+    });
+
+    console.log(tarefas);
+
+    localStorage.setItem('tarefas', JSON.stringify(tarefas));
 }
 
 function apagaTodasTarefas(evento) {
@@ -91,6 +115,13 @@ function apagaTodasTarefas(evento) {
 
     LISTA.innerHTML = '';
 
+    apagaTodosLocalStorage();
+
+}
+
+function apagaTodosLocalStorage() {
+
+    localStorage.removeItem('tarefas');
 }
 
 function gravaTarefaNoLocalStorage(tarefa) {
