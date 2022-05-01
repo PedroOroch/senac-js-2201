@@ -6,10 +6,12 @@ function carregaConteudo() {
     }).then(function(conteudo) {
         const OBJ = JSON.parse(conteudo);
 
+        document.querySelector('ul').innerHTML = '';
+
         const UL = document.querySelector('ul');
 
         const NOME = OBJ.moedas;
-        const VALUE = OBJ.moedas;
+        const VALUE = OBJ.valores;
 
         for (let i = 0; i < NOME.length; i++) {
             let list = document.createElement('li');
