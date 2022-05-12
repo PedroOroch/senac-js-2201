@@ -1,27 +1,32 @@
 document.querySelector('#fetch').addEventListener('click', carregaConteudo);
 
 function carregaConteudo() {
-    fetch('http://10.135.236.34:5500/AJAX/cotacoes.html').then(function(resultado) {
-        return resultado.text();
-    }).then(function(conteudo) {
-        const OBJ = JSON.parse(conteudo);
 
-        document.querySelector('ul').innerHTML = '';
+    try { //usando try Catch
+        fetch('http://10.135.236.34:5500/AJAX/cotacoes.html').then(function(resultado) {
+            return resultado.text();
+        }).then(function(conteudo) {
+            const OBJ = JSON.parse(conteudo);
 
-        const UL = document.querySelector('ul');
+            document.querySelector('ul').innerHTML = '';
 
-        const NOME = OBJ.moedas;
-        const VALUE = OBJ.valores;
+            const UL = document.querySelector('ul');
 
-        for (let i = 0; i < NOME.length; i++) {
-            let list = document.createElement('li');
-            const TEXT = document.createTextNode(NOME[i] + ': ' + VALUE[i]);
+            const NOME = OBJ.moedas;
+            const VALUE = OBJ.valores;
 
-            list.appendChild(TEXT);
-            UL.appendChild(list);
-        }
+            for (let i = 0; i < NOME.length; i++) {
+                let list = document.createElement('li');
+                const TEXT = document.createTextNode(NOME[i] + ': ' + VALUE[i]);
 
-    });
+                list.appendChild(TEXT);
+                UL.appendChild(list);
+            }
+
+        });
+    } catch (e) {
+        alert('Problem ao obter os dados: ' + e.message)
+    }
 }
 
 console.log(carregaConteudo());

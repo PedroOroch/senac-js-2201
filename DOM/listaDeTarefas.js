@@ -110,13 +110,15 @@ function apagaDoLocalStorage(tarefaParaApagar) {
 }
 
 function apagaTodasTarefas(evento) {
+    try {
+        evento.preventDefault();
 
-    evento.preventDefault();
+        LISTA.innerHTML = '';
 
-    LISTA.innerHTML = '';
-
-    apagaTodosLocalStorage();
-
+        apagaTodosLocalStorage();
+    } catch (e) {
+        alert('Ocorreu um Problema: ' + e.message);
+    }
 }
 
 function apagaTodosLocalStorage() {
@@ -125,19 +127,23 @@ function apagaTodosLocalStorage() {
 }
 
 function gravaTarefaNoLocalStorage(tarefa) {
+    try {
+        let tarefas;
 
-    let tarefas;
+        if (localStorage.getItem('tarefas') === null)
 
-    if (localStorage.getItem('tarefas') === null)
+            tarefas = [];
 
-        tarefas = [];
+        else {
 
-    else {
+            tarefas = JSON.parse(localStorage.getItem('tarefas'));
+        }
+        tarefas.push(tarefa.value);
+        localStorage.setItem('tarefas', JSON.stringify(tarefas));
 
-        tarefas = JSON.parse(localStorage.getItem('tarefas'));
+    } catch (e) {
+        alert('Ocorreu um Problema: ' + e.message);
     }
-    tarefas.push(tarefa.value);
-    localStorage.setItem('tarefas', JSON.stringify(tarefas));
 
 }
 
@@ -180,3 +186,9 @@ function pegaTarefa() {
 }
 
 carregaMonitorDeEventos();
+
+try {
+    carregaMonitorDeEventos();
+} catch (e) {
+    alert('Ocorreu um Problema: ' + e.message);
+}
