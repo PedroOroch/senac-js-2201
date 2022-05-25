@@ -6,3 +6,4 @@ Scripts para Web 2022 - 01
 
 Vamos nos divertir muuuuuuuito!!!
 
+(não vamos não)
