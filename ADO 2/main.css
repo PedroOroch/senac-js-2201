@@ -1,0 +1,21 @@
+body {
+    background-color: black;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+}
+
+#header {
+    text-align: center;
+}
+
+#intro {
+    text-align: center;
+}
+
+#box {
+    text-align: center;
+}
+
+#output {
+    text-align: center;
+}
